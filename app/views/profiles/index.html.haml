@@ -1,0 +1,15 @@
+%h1= pluralize(@profiles.size, 'Profile')
+
+=link_to("Create New Profile", new_profile_path)
+
+- @profiles.each do |profile| 
+  %article
+    %header
+      %h2= link_to(profile.name, profile)
+
+    %p= profile.description
+    %table
+      %tr
+        %th Location:
+        %td= profile.location
+     

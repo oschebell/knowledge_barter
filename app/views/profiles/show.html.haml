@@ -1,0 +1,18 @@
+%article
+  %header
+    %h2= @profile.name
+    %p= @profile.description
+    %table
+      %tr
+        %th Current Skills:
+        %td= @profile.current_skills
+      %tr
+        %th Interested in Learning:
+        %td= @profile.interested_in
+      %tr
+        %th Location:
+        %td= @profile.location
+
+= link_to("All Profiles", root_path)
+= link_to("Edit", edit_profile_path(@profile))
+= link_to "Delete", profile_path(@profile), method: :delete, data: {confirm: 'Are you sure?'}

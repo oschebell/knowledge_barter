@@ -1,0 +1,35 @@
+= form_for(@profile, html:{class:'form'}) do |f|
+    .row
+        .col-lg-6
+            .form-group
+                = f.label :name
+                = f.text_field :name, autofocus: true
+
+    .row
+        .col-lg-6
+            .form-group
+                = f.label :description
+                =f.text_area :description, cols:40, rows: 7
+
+    .row
+        .col-lg-6
+            .form-group
+                = f.label :current_skills
+                = f.text_area :current_skills, cols:40, rows: 7
+
+    .row
+        .col-lg-6
+            .form-group
+                = f.label :interested_in
+                = f.text_area :interested_in, cols:40, rows: 7
+
+    .row
+        .col-lg-6
+            .form-group
+                = f.label :location
+                = f.text_field :location
+
+    .row
+        .col-lg-6
+            = f.submit
+            =link_to "Cancel", profiles_path

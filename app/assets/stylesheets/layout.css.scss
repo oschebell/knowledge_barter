@@ -1,0 +1,23 @@
+$primary-color: #F0F0F0;
+$secondary-color: orange;
+
+footer#page-footer {
+    text-align: center;
+    padding: 5px;
+    color: #237CBE;
+    background: $primary-color
+}
+
+header#page-header {
+    color:$secondary-color;
+    background-color:#333333;
+    font-size: 2.5em
+}
+
+
+aside#sidebar {
+    float: right;
+    background: $primary-color;
+    width: 200;
+    color: $secondary-color;
+}
