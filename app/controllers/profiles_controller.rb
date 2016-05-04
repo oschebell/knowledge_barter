@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
 
   def edit
     @skills = Skill.all
+    @locations = Location.all
+
   end
 
   def update
@@ -21,6 +23,7 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @skills = Skill.all
+    @locations = Location.all
   end
 
   def create
@@ -42,6 +45,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :description, :location, :interested_in, current_skill_ids:[])
+    params.require(:profile).permit(:name, :description, :location_id, :interested_in, current_skill_ids:[])
   end
 end

@@ -15,3 +15,5 @@ Skill.create(name: "3D Printing")
 Skill.create(name: "Knitting")
 Skill.create(name: "Painting")
 Skill.create(name: "Photography")
+
+Location.create(name:"Melbourne, VIC")

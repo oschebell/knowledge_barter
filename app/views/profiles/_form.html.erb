@@ -11,11 +11,12 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="form-group">
-        <%= f.label :location %>
-        <%= f.text_field :location%>
+        <%= f.label :location_id, "Location" %>
+        <%= f.select :location_id, @locations.map {|location| [location.name, location.id]}, { prompt: "Choose a location"} %>
       </div>
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-lg-6">
