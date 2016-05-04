@@ -1,0 +1,45 @@
+<%= form_for(@profile, html:{class:'form'}) do |f| %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :location %>
+        <%= f.text_field :location%>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, cols:40, rows: 7 %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= f.label :current_skill_ids, "Current Skills" %>
+        <%= f.select :current_skill_ids, @skills.map {|skill| [skill.name, skill.id]}, { prompt: "Choose a skill"}, { multiple: true } %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-6">
+      <%= f.submit %>
+      <%= link_to "Cancel", profiles_path %>
+    </div>
+  </div>
+<% end %>

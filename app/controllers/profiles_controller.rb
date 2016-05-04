@@ -1,16 +1,16 @@
 class ProfilesController < ApplicationController
   before_filter :profile_find, only: [:show, :edit, :update, :destroy]
-    
+
   def index
     @profiles =Profile.all
   end
 
   def show
-        
+
   end
 
   def edit
-     
+    @skills = Skill.all
   end
 
   def update
@@ -19,7 +19,8 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new  
+    @profile = Profile.new
+    @skills = Skill.all
   end
 
   def create
@@ -31,7 +32,7 @@ class ProfilesController < ApplicationController
 
   def destroy
       @profile.destroy
-      redirect_to profiles_url
+      redirect_to profiles_path
   end
 
   private
@@ -41,7 +42,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :description, :location, :current_skills, :interested_in)  
+    params.require(:profile).permit(:name, :description, :location, :interested_in, current_skill_ids:[])
   end
 end
-

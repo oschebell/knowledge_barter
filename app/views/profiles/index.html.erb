@@ -1,0 +1,25 @@
+<h1>
+  <%= pluralize(@profiles.size, 'Profile') %>
+</h1>
+
+<% @profiles.each do |profile|  %>
+  <article>
+    <header>
+      <h2>
+        <%= link_to(profile.name, profile) %>
+      </h2>
+    </header>
+  </article>
+
+  <p>
+  <%= profile.description %>
+  <table>
+    <tr>
+      <th>Location:</th>
+      <td>
+        <%= profile.location %>
+      </td>
+    </tr>
+  </table>
+  </p>
+  <% end %>
