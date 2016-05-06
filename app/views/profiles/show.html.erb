@@ -16,7 +16,8 @@
       <tr>
         <th>Interested in Learning:</th>
         <td>
-          <%= @profile.interested_in %>
+          <%= @profile.interested_skills.to_sentence %>
+        </td>
         </td>
       </tr>
       <tr>
