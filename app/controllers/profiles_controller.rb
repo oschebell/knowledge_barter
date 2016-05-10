@@ -2,11 +2,14 @@ class ProfilesController < ApplicationController
   before_filter :profile_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @profiles =Profile.all
+    @profiles = Profile.all
+    if params[:location_id].present?
+      @profiles = @profiles.where(location_id: params[:location_id])
+    end
+    @locations = Location.all
   end
 
   def show
-
   end
 
   def edit

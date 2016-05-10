@@ -1,6 +1,14 @@
+
+
+<%= form_tag(profiles_path, :method => "get") do %>
+<%= select_tag "location_id", options_from_collection_for_select(@locations, "id", "name", params[:location_id]) %>
+<%= submit_tag "Search" %>
+<% end %>
+
 <h1>
   <%= pluralize(@profiles.size, 'Profile') %>
 </h1>
+
 
 <% @profiles.each do |profile|  %>
   <article>
