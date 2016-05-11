@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20160510082427) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "description", limit: 255
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "location_id"

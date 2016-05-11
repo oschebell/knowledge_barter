@@ -4,9 +4,15 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
     if params[:location_id].present?
-      @profiles = @profiles.where(location_id: params[:location_id])
+      @profiles = @profiles.where(:location_id => params[:location_id])
     end
+
+    if params[:skill_id].present?
+      @profiles = @profiles.joins(:current_skills).where(:skills => { :id => params[:skill_id]})
+    end
+
     @locations = Location.all
+    @skills = Skill.all
   end
 
   def show
