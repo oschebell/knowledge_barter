@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160510082427) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160510082427) do
     t.integer  "location_id"
   end
 
-  add_index "profiles", ["location_id"], name: "index_profiles_on_location_id"
+  add_index "profiles", ["location_id"], name: "index_profiles_on_location_id", using: :btree
 
   create_table "profiles_current_skills", id: false, force: :cascade do |t|
     t.integer "profile_id"
@@ -45,4 +48,5 @@ ActiveRecord::Schema.define(version: 20160510082427) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "profiles", "locations"
 end

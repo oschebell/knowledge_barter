@@ -43,8 +43,8 @@ class ProfilesController < ApplicationController
 
 
   def destroy
-      @profile.destroy
-      redirect_to profiles_path
+    @profile.destroy
+    redirect_to profiles_path
   end
 
   private
