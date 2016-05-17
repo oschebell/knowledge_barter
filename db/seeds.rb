@@ -23,13 +23,3 @@ Location.create(name:"Sydney, NSW")
 Location.create(name:"Darwin, NT")
 Location.create(name:"Canberra, ACT")
 Location.create(name:"Brisbane, QLD")
-
-1. person[:name]
-2. team[0][:name]
-3. marketplacer[:team][0][:name]
-4. company[:marketplacer][:team][0][:name]
-
-
-. `team = [{ name: "Owen" }]`
-3. `marketplacer = { team: [{ name: "Owen" }] }`
-4. `company = { marketplacer: { team: [{ name: "Owen" }] } }`
