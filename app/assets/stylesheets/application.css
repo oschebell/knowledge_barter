@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+  padding: 8px;
+  border-bottom: solid;
+}
