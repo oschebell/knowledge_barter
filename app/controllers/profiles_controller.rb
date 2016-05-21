@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.create(profile_params)
+    @profile.user = current_user
     @profile.save
     redirect_to @profile
   end
