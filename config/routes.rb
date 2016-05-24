@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: "registrations"}
+
+  devise_for :profiles, controllers: {registrations: "registrations"}
 root "profiles#index"
 # get "profiles" => "profiles#index"
 # get "profiles/:id" => "profiles#show", as: "profile"
