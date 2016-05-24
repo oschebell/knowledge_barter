@@ -11,6 +11,6 @@ class Profile < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-Profile.joins(:skill).where('current_skills' => :current_skills_id)
+#.joins(:skill).where('current_skills' => :current_skills_id)
 
 end

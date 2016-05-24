@@ -27,3 +27,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+
+<%= render("form", {profile: @profile, location: @location, current_skill_ids: @skills, interested_skill_ids: @skills}) %>
